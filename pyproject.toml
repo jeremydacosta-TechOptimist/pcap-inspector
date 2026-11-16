@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pcapkit"
+version = "1.0.0"
+description = "Zero-dependency packet capture analyzer for classic pcap and pcapng files"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Jeremy da Costa", email = "357285436+jeremydacosta-TechOptimist@users.noreply.github.com" },
+]
+keywords = ["pcap", "pcapng", "packet-capture", "network-analysis", "packet-decoder"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+  "Topic :: System :: Networking",
+  "Topic :: System :: Systems Administration",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+pcapkit = "pcapkit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/jeremydacosta-TechOptimist/pcap-inspector"
+Issues = "https://github.com/jeremydacosta-TechOptimist/pcap-inspector/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
